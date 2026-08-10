@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/landing/Hero";
 import { ComingSoon } from "@/components/landing/ComingSoon";
-import { Footer } from "@/components/landing/Footer";
 
 const TITLE = "Daily Stogie — Premier International Cigar Community";
 const DESCRIPTION =
@@ -28,7 +27,6 @@ function Index() {
         <Hero />
         <ComingSoon />
       </main>
-      <Footer />
     </div>
   );
 }
