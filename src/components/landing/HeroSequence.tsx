@@ -28,7 +28,6 @@ export function HeroSequence({
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
-  const readyRef = useRef(false);
   const drawnFrame = useRef(-1);
   const sizeRef = useRef({ width: 0, height: 0, dpr: 1 });
 
@@ -63,23 +62,33 @@ export function HeroSequence({
       ctx.globalAlpha = 1;
     }
 
+    function isLoaded(img: HTMLImageElement | undefined): img is HTMLImageElement {
+      return !!img && img.complete && img.naturalWidth > 0;
+    }
+
+    // Paints whatever frame is available right now rather than waiting for
+    // every frame in the sequence to finish downloading — otherwise a user
+    // who scrolls before the last of 40 images arrives sees nothing move at
+    // all, which reads as the animation being broken/slow.
     function renderAt(progress: number) {
-      if (!ctx || !readyRef.current) return;
+      if (!ctx) return;
       const { width, height } = sizeRef.current;
       const t = Math.min(1, Math.max(0, progress)) * (FRAME_COUNT - 1);
       const base = Math.floor(t);
       const frac = t - base;
       const next = Math.min(FRAME_COUNT - 1, base + 1);
 
+      const baseImg = imagesRef.current[base];
+      if (!isLoaded(baseImg)) return;
+
       const encoded = base + frac;
       if (Math.abs(encoded - drawnFrame.current) < 0.002) return;
       drawnFrame.current = encoded;
 
       ctx.clearRect(0, 0, width, height);
-      const baseImg = imagesRef.current[base];
+      drawCover(baseImg, 1);
       const nextImg = imagesRef.current[next];
-      if (baseImg) drawCover(baseImg, 1);
-      if (nextImg && frac > 0.01) drawCover(nextImg, frac);
+      if (isLoaded(nextImg) && frac > 0.01) drawCover(nextImg, frac);
     }
 
     function resize() {
@@ -102,19 +111,17 @@ export function HeroSequence({
 
     let cancelled = false;
     const images: HTMLImageElement[] = [];
-    let loaded = 0;
 
     for (let i = 0; i < FRAME_COUNT; i++) {
       const img = new Image();
       img.decoding = "async";
+      // First few frames are what's visible immediately on load/early
+      // scroll — fetch them ahead of the rest of the sequence.
+      if (i < 4) img.fetchPriority = "high";
       img.src = frameUrl(i);
       img.onload = () => {
-        loaded += 1;
-        if (i === 0) renderAt(0);
-        if (loaded === FRAME_COUNT && !cancelled) {
-          readyRef.current = true;
-          renderAt(scrollTriggerRef.current?.progress ?? 0);
-        }
+        if (cancelled) return;
+        renderAt(scrollTriggerRef.current?.progress ?? 0);
       };
       images.push(img);
     }
@@ -129,8 +136,9 @@ export function HeroSequence({
 
     if (reducedMotion) {
       // Skip scrubbing; just settle on a representative frame once loaded.
+      const targetIndex = Math.round(0.5 * (FRAME_COUNT - 1));
       const check = window.setInterval(() => {
-        if (readyRef.current) {
+        if (isLoaded(imagesRef.current[targetIndex])) {
           renderAt(0.5);
           window.clearInterval(check);
         }
@@ -166,7 +174,7 @@ export function HeroSequence({
         pin: sectionRef.current,
         pinSpacing: true,
         anticipatePin: 1,
-        scrub: 0.65,
+        scrub: true,
         invalidateOnRefresh: true,
         onUpdate: (self) => {
           renderAt(self.progress);

@@ -22,7 +22,7 @@ export function SmoothScrollProvider({ children }: { children: ReactNode }) {
     ensureScrollTriggerRegistered();
 
     const lenis = new Lenis({
-      duration: 1.15,
+      duration: 0.5,
       easing: (t) => 1 - Math.pow(1 - t, 3),
       smoothWheel: true,
       wheelMultiplier: 1,
