@@ -60,7 +60,7 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
             {COLUMNS.map((column) => (
               <div key={column.title}>
-                <h3 className="text-[10px] uppercase tracking-[0.22em] text-gold">
+                <h3 className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">
                   {column.title}
                 </h3>
                 <ul className="mt-4 space-y-2">
@@ -68,7 +68,7 @@ export function Footer() {
                     <li key={link}>
                       <a
                         href="#contact"
-                        className="text-[11px] text-muted-foreground transition-colors hover:text-gold"
+                        className="text-sm text-muted-foreground transition-colors hover:text-gold"
                       >
                         {link}
                       </a>
@@ -80,22 +80,22 @@ export function Footer() {
           </div>
 
           <div className="border border-border bg-secondary p-6">
-            <p className="font-display text-base uppercase tracking-[0.18em] text-gold">
+            <p className="font-display text-xl font-semibold uppercase tracking-[0.18em] text-gold">
               Join the Club
             </p>
-            <p className="mt-3 text-[10px] leading-relaxed text-muted-foreground">
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               Unlock a world of premium experiences and connections.
             </p>
             <a
               href="#membership"
-              className="mt-5 inline-block w-full bg-ink px-6 py-3 text-center text-[10px] uppercase tracking-[0.2em] text-cream transition-opacity hover:opacity-85"
+              className="mt-5 inline-block w-full bg-ink px-6 py-3 text-center text-sm font-medium uppercase tracking-[0.2em] text-cream transition-opacity hover:opacity-85"
             >
               Join Now
             </a>
           </div>
         </div>
 
-        <p className="mt-10 border-t border-border pt-6 text-center text-[10px] tracking-wide text-muted-foreground">
+        <p className="mt-10 border-t border-border pt-6 text-center text-xs tracking-wide text-muted-foreground">
           © 2026 Daily Stogie. All rights reserved.
         </p>
       </div>

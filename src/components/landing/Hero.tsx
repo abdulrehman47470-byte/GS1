@@ -14,18 +14,17 @@ export function Hero() {
       {/* Cinematic scroll-scrubbed visual — stacked on top on mobile, full-bleed background on desktop */}
       <div className="relative h-[28svh] w-full shrink-0 lg:absolute lg:inset-0 lg:h-auto">
         <HeroSequence sectionRef={sectionRef} poster="/sequence/ezgif-frame-001.jpg" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent lg:bg-gradient-to-r lg:from-ink lg:via-ink/55 lg:to-ink/15" />
-        <div className="absolute inset-0 hidden bg-gradient-to-t from-ink via-ink/10 to-ink/50 lg:block" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent lg:hidden" />
       </div>
 
-      {/* Copy */}
-      <div className="relative z-10 flex flex-1 flex-col justify-center bg-ink px-6 py-4 lg:absolute lg:inset-0 lg:flex-none lg:bg-transparent lg:py-32">
+      {/* Copy — mobile only; the desktop hero is the full-bleed cinematic visual with no text overlay */}
+      <div className="relative z-10 flex flex-1 flex-col justify-center bg-ink px-6 py-4 lg:hidden">
         <div className="mx-auto w-full max-w-[1280px]">
           <div className="max-w-md">
-            <p className="text-[10px] uppercase tracking-[0.28em] text-gold">
+            <p className="text-xs font-medium uppercase tracking-[0.28em] text-gold">
               Premier International Cigar Community
             </p>
-            <h1 className="mt-4 font-display text-6xl uppercase leading-[0.95] tracking-tight text-cream sm:text-7xl lg:mt-6">
+            <h1 className="mt-4 font-display text-5xl font-bold uppercase leading-[0.95] tracking-tight text-cream sm:text-[68px] lg:mt-6">
               Exquisite
               <span className="block text-gold">Experiences</span>
             </h1>
@@ -39,7 +38,7 @@ export function Hero() {
               <span className="h-px w-24 bg-cream/25" />
             </div>
 
-            <p className="mt-3 text-sm leading-relaxed text-cream/75 lg:mt-6">
+            <p className="mt-3 text-base leading-relaxed text-cream/75 lg:mt-6">
               Where passion meets refinement. Discover a world of premium cigars,
               curated moments, and global connections.
             </p>
@@ -47,13 +46,13 @@ export function Hero() {
             <div className="mt-5 flex flex-wrap gap-3 lg:mt-8">
               <a
                 href="#membership"
-                className="inline-flex items-center gap-6 bg-gold px-6 py-4 text-[10px] uppercase tracking-[0.2em] text-ink transition-opacity hover:opacity-85"
+                className="inline-flex items-center gap-6 bg-gold px-6 py-4 text-sm font-medium uppercase tracking-[0.2em] text-ink transition-opacity hover:opacity-85"
               >
                 Join the Club <ArrowRight className="h-3.5 w-3.5" />
               </a>
               <a
                 href="#experiences"
-                className="inline-flex items-center border border-cream/30 bg-transparent px-8 py-4 text-[10px] uppercase tracking-[0.2em] text-cream transition-colors hover:border-gold hover:text-gold"
+                className="inline-flex items-center border border-cream/30 bg-transparent px-8 py-4 text-sm font-medium uppercase tracking-[0.2em] text-cream transition-colors hover:border-gold hover:text-gold"
               >
                 Explore More
               </a>
@@ -64,10 +63,10 @@ export function Hero() {
                 <Play className="h-3 w-3 fill-current" />
               </span>
               <span>
-                <span className="block text-[10px] uppercase tracking-[0.2em] text-cream">
+                <span className="block text-sm font-medium uppercase tracking-[0.2em] text-cream">
                   Watch Intro
                 </span>
-                <span className="block text-[10px] tracking-wide text-cream/60">
+                <span className="block text-xs tracking-wide text-cream/60">
                   1:24 min
                 </span>
               </span>

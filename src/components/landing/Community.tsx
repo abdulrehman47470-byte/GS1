@@ -17,10 +17,10 @@ export function Community() {
   return (
     <section id="community" className="bg-background py-16">
       <div className="mx-auto max-w-[1280px] px-6">
-        <p className="text-center text-[10px] uppercase tracking-[0.28em] text-gold">
+        <p className="text-center text-xs font-medium uppercase tracking-[0.28em] text-gold">
           The Heart of Daily Stogie
         </p>
-        <h2 className="mt-4 text-center font-display text-4xl uppercase tracking-wide text-ink sm:text-5xl">
+        <h2 className="mt-4 text-center font-display text-5xl font-semibold uppercase tracking-wide text-ink">
           A Global Community
         </h2>
 
@@ -33,7 +33,7 @@ export function Community() {
                 loading="lazy"
                 width={700}
                 height={560}
-                className="h-40 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <span className="absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full bg-background/85">
                 <Lock className="h-3 w-3 text-ink" />
@@ -45,7 +45,7 @@ export function Community() {
         <div className="mt-8 flex justify-center">
           <a
             href="#community"
-            className="border border-border bg-background px-8 py-4 text-[10px] uppercase tracking-[0.2em] text-ink transition-colors hover:border-gold hover:text-gold"
+            className="border border-border bg-background px-8 py-4 text-sm font-medium uppercase tracking-[0.2em] text-ink transition-colors hover:border-gold hover:text-gold"
           >
             Discover Our Community
           </a>

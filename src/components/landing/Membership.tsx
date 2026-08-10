@@ -46,23 +46,23 @@ export function Membership() {
           {/* Left copy */}
           <div className="flex flex-col justify-center p-10">
             <div className="flex items-center gap-3">
-              <p className="text-[10px] uppercase tracking-[0.24em] text-gold">
+              <p className="text-xs font-medium uppercase tracking-[0.24em] text-gold">
                 Become a Member
               </p>
               <span className="h-px w-10 bg-gold/50" />
             </div>
-            <h2 className="mt-6 font-display text-4xl uppercase leading-tight text-ink">
+            <h2 className="mt-6 font-display text-5xl font-semibold uppercase leading-tight text-ink">
               Unlock a World
               <br />
               of Privileges
             </h2>
-            <p className="mt-6 text-xs leading-relaxed text-muted-foreground">
+            <p className="mt-6 text-base leading-relaxed text-muted-foreground">
               Join Daily Stogie and elevate your cigar journey with exclusive
               benefits, curated experiences, and a global network.
             </p>
             <a
               href="#membership"
-              className="mt-8 inline-flex w-fit items-center gap-6 bg-ink px-6 py-4 text-[10px] uppercase tracking-[0.2em] text-cream transition-opacity hover:opacity-85"
+              className="mt-8 inline-flex w-fit items-center gap-6 bg-ink px-6 py-4 text-sm font-medium uppercase tracking-[0.2em] text-cream transition-opacity hover:opacity-85"
             >
               Become a Member <ArrowRight className="h-3.5 w-3.5" />
             </a>
@@ -84,7 +84,7 @@ export function Membership() {
                   strokeWidth={1}
                 />
                 <h3
-                  className={`mt-4 text-center font-display text-xl uppercase tracking-[0.16em] ${
+                  className={`mt-4 text-center font-display text-xl font-semibold uppercase tracking-[0.16em] ${
                     featured ? "text-gold" : "text-ink"
                   }`}
                 >
@@ -97,7 +97,7 @@ export function Membership() {
                     {price}
                   </span>
                   <span
-                    className={`ml-1 text-[9px] tracking-[0.16em] ${
+                    className={`ml-1 text-xs tracking-[0.16em] ${
                       featured ? "text-cream/60" : "text-muted-foreground"
                     }`}
                   >
@@ -110,7 +110,7 @@ export function Membership() {
                     <li key={perk} className="flex items-start gap-2">
                       <Check className="mt-0.5 h-3 w-3 shrink-0 text-gold" />
                       <span
-                        className={`text-[10px] tracking-wide ${
+                        className={`text-sm tracking-wide ${
                           featured ? "text-cream/85" : "text-muted-foreground"
                         }`}
                       >
@@ -124,8 +124,8 @@ export function Membership() {
                   type="button"
                   className={
                     featured
-                      ? "mt-7 w-full bg-gold py-3 text-[10px] uppercase tracking-[0.2em] text-ink transition-opacity hover:opacity-90"
-                      : "mt-7 w-full border border-border py-3 text-[10px] uppercase tracking-[0.2em] text-ink transition-colors hover:border-gold hover:text-gold"
+                      ? "mt-7 w-full bg-gold py-3 text-sm font-medium uppercase tracking-[0.2em] text-ink transition-opacity hover:opacity-90"
+                      : "mt-7 w-full border border-border py-3 text-sm font-medium uppercase tracking-[0.2em] text-ink transition-colors hover:border-gold hover:text-gold"
                   }
                 >
                   Select

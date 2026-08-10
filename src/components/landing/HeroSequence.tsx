@@ -184,6 +184,11 @@ export function HeroSequence({
       <img
         src={poster}
         alt="Members lounge with leather seating and a glowing cigar ember"
+        width={1280}
+        height={720}
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
         className="absolute inset-0 h-full w-full object-cover"
       />
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />

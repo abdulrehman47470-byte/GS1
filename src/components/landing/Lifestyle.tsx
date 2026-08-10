@@ -34,13 +34,13 @@ export function Lifestyle() {
       <div className="mx-auto max-w-[1280px] px-6">
         <div className="flex items-center justify-center gap-4">
           <span className="h-px w-16 bg-border" />
-          <p className="text-[10px] uppercase tracking-[0.28em] text-ink">
+          <p className="text-xs font-medium uppercase tracking-[0.28em] text-ink">
             More Than a Cigar
           </p>
           <span className="h-px w-16 bg-border" />
         </div>
 
-        <h2 className="mt-6 text-center font-display text-4xl uppercase tracking-wide text-ink sm:text-5xl">
+        <h2 className="mt-6 text-center font-display text-5xl font-semibold uppercase tracking-wide text-ink">
           A Lifestyle of <span className="text-gold">Refinement</span>
         </h2>
 
@@ -51,10 +51,10 @@ export function Lifestyle() {
               className={`px-6 text-center ${i > 0 ? "lg:border-l lg:border-border" : ""}`}
             >
               <Icon className="mx-auto h-8 w-8 text-gold" strokeWidth={1} />
-              <h3 className="mt-5 text-[11px] font-medium uppercase tracking-[0.16em] text-ink">
+              <h3 className="mt-5 text-lg font-semibold uppercase tracking-[0.16em] text-ink">
                 {title}
               </h3>
-              <p className="mt-4 text-xs leading-relaxed text-muted-foreground">{text}</p>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">{text}</p>
             </article>
           ))}
         </div>
