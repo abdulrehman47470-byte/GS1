@@ -2,10 +2,17 @@ import { createStart, createCsrfMiddleware, createMiddleware } from "@tanstack/r
 
 import { renderErrorPage } from "./lib/error-page";
 
-const errorMiddleware = createMiddleware().server(async ({ next }) => {
+const errorMiddleware = createMiddleware().server(async ({ next, handlerType }) => {
   try {
     return await next();
   } catch (error) {
+    // Server function calls (e.g. the admin dashboard's save/upload) need
+    // their errors to propagate normally so the RPC client can serialize
+    // them and the caller sees the real message — only page requests get
+    // the friendly HTML fallback.
+    if (handlerType === "serverFn") {
+      throw error;
+    }
     if (error != null && typeof error === "object" && "statusCode" in error) {
       throw error;
     }

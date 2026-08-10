@@ -1,15 +1,5 @@
 import { ArrowRight, MapPin, User } from "lucide-react";
-import ny from "@/assets/event-ny.jpg";
-import london from "@/assets/event-london.jpg";
-import dubai from "@/assets/event-dubai.jpg";
-import miami from "@/assets/event-miami.jpg";
-
-const EVENTS = [
-  { month: "MAY", day: "24", title: "Cigar Dinner", city: "New York", place: "New York, USA", img: ny },
-  { month: "JUN", day: "12", title: "Summer Smoke", city: "London", place: "London, UK", img: london },
-  { month: "JUL", day: "08", title: "Private Lounge Night", city: "Dubai", place: "Dubai, UAE", img: dubai },
-  { month: "AUG", day: "21", title: "Aficionado Meetup", city: "Miami", place: "Miami, USA", img: miami },
-];
+import content from "@/content/site-content.json";
 
 export function Events() {
   return (
@@ -17,21 +7,21 @@ export function Events() {
       <div className="mx-auto max-w-[1280px] px-6">
         <div className="flex items-end justify-between border-t border-border pt-6">
           <h2 className="text-2xl font-semibold uppercase tracking-[0.1em] text-ink">
-            Upcoming Events
+            {content.events.heading}
           </h2>
           <a
             href="#events"
             className="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-gold"
           >
-            View All Events <ArrowRight className="h-3 w-3" />
+            {content.events.ctaLabel} <ArrowRight className="h-3 w-3" />
           </a>
         </div>
 
         <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {EVENTS.map((event) => (
-            <article key={event.title} className="group relative overflow-hidden">
+          {content.events.events.map((event, i) => (
+            <article key={i} className="group relative overflow-hidden">
               <img
-                src={event.img}
+                src={event.image}
                 alt={`${event.title} in ${event.city}`}
                 loading="lazy"
                 width={700}

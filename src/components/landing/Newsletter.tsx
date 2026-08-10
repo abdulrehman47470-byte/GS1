@@ -1,4 +1,4 @@
-import newsletterBg from "@/assets/newsletter.jpg";
+import content from "@/content/site-content.json";
 
 export function Newsletter() {
   return (
@@ -7,12 +7,11 @@ export function Newsletter() {
         <div className="grid items-center gap-0 bg-secondary lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
           <div className="p-10">
             <h2 className="font-display text-xl font-semibold uppercase tracking-[0.1em] text-ink">
-              Stay in the Loop
+              {content.newsletter.heading}
             </h2>
             <div className="mt-4 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
               <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-                Join our newsletter and never miss exclusive releases, events, and
-                stories.
+                {content.newsletter.description}
               </p>
               <form
                 className="flex w-full max-w-sm"
@@ -39,7 +38,7 @@ export function Newsletter() {
           </div>
 
           <img
-            src={newsletterBg}
+            src={content.newsletter.image}
             alt="Whiskey glass resting on a leather journal"
             loading="lazy"
             width={1400}

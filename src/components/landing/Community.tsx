@@ -1,32 +1,20 @@
 import { Lock } from "lucide-react";
-import c1 from "@/assets/community-1.jpg";
-import c2 from "@/assets/community-2.jpg";
-import c3 from "@/assets/community-3.jpg";
-import c4 from "@/assets/community-4.jpg";
-import c5 from "@/assets/community-5.jpg";
-
-const PHOTOS = [
-  { src: c1, alt: "Two members sharing cigars and conversation" },
-  { src: c2, alt: "Close-up of premium cigars with gold bands" },
-  { src: c3, alt: "Members gathered at a private lounge event" },
-  { src: c4, alt: "City skyline at night from a members lounge" },
-  { src: c5, alt: "Hand holding a lit cigar with rising smoke" },
-];
+import content from "@/content/site-content.json";
 
 export function Community() {
   return (
     <section id="community" className="bg-background py-16">
       <div className="mx-auto max-w-[1280px] px-6">
         <p className="text-center text-xs font-medium uppercase tracking-[0.28em] text-gold">
-          The Heart of Daily Stogie
+          {content.community.eyebrow}
         </p>
         <h2 className="mt-4 text-center font-display text-5xl font-semibold uppercase tracking-wide text-ink">
-          A Global Community
+          {content.community.heading}
         </h2>
 
         <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-          {PHOTOS.map(({ src, alt }) => (
-            <figure key={alt} className="group relative overflow-hidden">
+          {content.community.photos.map(({ src, alt }, i) => (
+            <figure key={i} className="group relative overflow-hidden">
               <img
                 src={src}
                 alt={alt}
@@ -47,7 +35,7 @@ export function Community() {
             href="#community"
             className="border border-border bg-background px-8 py-4 text-sm font-medium uppercase tracking-[0.2em] text-ink transition-colors hover:border-gold hover:text-gold"
           >
-            Discover Our Community
+            {content.community.ctaLabel}
           </a>
         </div>
       </div>

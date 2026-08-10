@@ -1,14 +1,5 @@
 import { Logo } from "./Logo";
-
-const NAV_LINKS = [
-  "Home",
-  "About",
-  "Community",
-  "Experiences",
-  "Events",
-  "Journal",
-  "Contact",
-];
+import content from "@/content/site-content.json";
 
 export function Header() {
   return (
@@ -19,9 +10,9 @@ export function Header() {
         </div>
 
         <nav className="hidden items-center gap-6 xl:flex" aria-label="Main">
-          {NAV_LINKS.map((link) => (
+          {content.header.navLinks.map((link, i) => (
             <a
-              key={link}
+              key={i}
               href={`#${link.toLowerCase()}`}
               className="whitespace-nowrap text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-gold"
             >
@@ -34,7 +25,7 @@ export function Header() {
           href="#membership"
           className="hidden shrink-0 whitespace-nowrap rounded-[14px] bg-ink px-6 py-3 text-sm font-medium uppercase tracking-[0.2em] text-cream transition-opacity hover:opacity-85 xl:inline-block"
         >
-          Join the Club
+          {content.header.ctaLabel}
         </a>
       </div>
     </header>

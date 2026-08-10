@@ -1,3 +1,5 @@
+import content from "@/content/site-content.json";
+
 type LogoProps = {
   tone?: "dark" | "light";
   showTagline?: boolean;
@@ -10,11 +12,11 @@ export function Logo({ tone = "dark", showTagline = true }: LogoProps) {
       <img src="/logo-mark.png" alt="" aria-hidden="true" className="h-10 w-10 object-contain" />
       <div className={text}>
         <div className="whitespace-nowrap font-display text-2xl font-semibold leading-none tracking-[0.18em] uppercase">
-          Daily Stogie
+          {content.logo.name}
         </div>
         {showTagline && (
           <div className="mt-1 text-xs font-medium leading-none tracking-[0.28em] uppercase opacity-60">
-            Premier International Cigar Community
+            {content.logo.tagline}
           </div>
         )}
       </div>

@@ -1,32 +1,7 @@
 import { Globe, MessageCircle, Leaf, Crown, ShieldCheck } from "lucide-react";
+import content from "@/content/site-content.json";
 
-const FEATURES = [
-  {
-    icon: Globe,
-    title: "Global Community",
-    text: "Connect with cigar enthusiasts worldwide and build lasting friendships.",
-  },
-  {
-    icon: MessageCircle,
-    title: "Daily Stories",
-    text: "Share your experiences, discover insights, and be inspired by our global members.",
-  },
-  {
-    icon: Leaf,
-    title: "Premium Discovery",
-    text: "Explore the world's finest cigars, handpicked by experts for true aficionados.",
-  },
-  {
-    icon: Crown,
-    title: "Exclusive Access",
-    text: "Members-only events, limited releases, and private lounge privileges.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Privacy First",
-    text: "Your privacy and personal data are protected with the highest standards.",
-  },
-];
+const FEATURE_ICONS = [Globe, MessageCircle, Leaf, Crown, ShieldCheck];
 
 export function Lifestyle() {
   return (
@@ -35,19 +10,21 @@ export function Lifestyle() {
         <div className="flex items-center justify-center gap-4">
           <span className="h-px w-16 bg-border" />
           <p className="text-xs font-medium uppercase tracking-[0.28em] text-ink">
-            More Than a Cigar
+            {content.lifestyle.eyebrow}
           </p>
           <span className="h-px w-16 bg-border" />
         </div>
 
         <h2 className="mt-6 text-center font-display text-5xl font-semibold uppercase tracking-wide text-ink">
-          A Lifestyle of <span className="text-gold">Refinement</span>
+          {content.lifestyle.headingLine1} <span className="text-gold">{content.lifestyle.headingHighlight}</span>
         </h2>
 
         <div className="mt-14 grid grid-cols-1 gap-y-12 sm:grid-cols-2 lg:grid-cols-5 lg:gap-y-0">
-          {FEATURES.map(({ icon: Icon, title, text }, i) => (
+          {content.lifestyle.features.map(({ title, text }, i) => {
+            const Icon = FEATURE_ICONS[i % FEATURE_ICONS.length] ?? Globe;
+            return (
             <article
-              key={title}
+              key={i}
               className={`px-6 text-center ${i > 0 ? "lg:border-l lg:border-border" : ""}`}
             >
               <Icon className="mx-auto h-8 w-8 text-gold" strokeWidth={1} />
@@ -56,7 +33,8 @@ export function Lifestyle() {
               </h3>
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">{text}</p>
             </article>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

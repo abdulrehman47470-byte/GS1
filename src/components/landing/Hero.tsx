@@ -1,6 +1,7 @@
 import { useCallback, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { HeroSequence } from "./HeroSequence";
+import content from "@/content/site-content.json";
 
 const DESKTOP_BREAKPOINT = 1024;
 const FADE_START = 0.45;
@@ -53,22 +54,22 @@ export function Hero() {
         <div className="mx-auto w-full max-w-[1280px]">
           <div className="max-w-md">
             <p className="text-xs font-medium uppercase tracking-[0.28em] text-gold">
-              Premier International Cigar Community
+              {content.hero.eyebrow}
             </p>
             <h1 className="mt-4 font-display text-5xl font-bold uppercase leading-[0.95] tracking-tight text-cream sm:text-[68px] lg:mt-6">
-              Exquisite
-              <span className="block text-gold">Mobile Experience</span>
+              {content.hero.headlineLine1}
+              <span className="block text-gold">{content.hero.headlineLine2}</span>
             </h1>
 
             <div className="mt-5 inline-flex items-center gap-3 border border-gold/40 px-5 py-2 lg:mt-7">
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
               <span className="text-xs font-medium uppercase tracking-[0.22em] text-cream">
-                Coming November 2026
+                {content.hero.badge}
               </span>
             </div>
 
             <p className="mt-4 text-sm font-medium uppercase tracking-[0.2em] text-gold lg:mt-6">
-              Be the First. Get on the Waiting List.
+              {content.hero.kicker}
             </p>
 
             <div className="mt-5 flex flex-wrap gap-3 lg:mt-8">
@@ -76,7 +77,7 @@ export function Hero() {
                 href="#app"
                 className="inline-flex items-center gap-6 bg-gold px-6 py-4 text-sm font-medium uppercase tracking-[0.2em] text-ink transition-opacity hover:opacity-85"
               >
-                Join the Waitlist <ArrowRight className="h-3.5 w-3.5" />
+                {content.hero.ctaLabel} <ArrowRight className="h-3.5 w-3.5" />
               </a>
             </div>
           </div>

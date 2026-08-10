@@ -1,0 +1,317 @@
+{
+  "header": {
+    "navLinks": [
+      "Home",
+      "About",
+      "Community",
+      "Experiences",
+      "Events",
+      "Journal",
+      "Contact"
+    ],
+    "ctaLabel": "Join the Club"
+  },
+  "logo": {
+    "name": "Daily Stogie",
+    "tagline": "Premier International Cigar Community"
+  },
+  "hero": {
+    "eyebrow": "Premier International Cigar Community",
+    "headlineLine1": "Exquisite",
+    "headlineLine2": "Mobile Experience",
+    "badge": "Coming November 2026",
+    "kicker": "Be the First. Get on the Waiting List.",
+    "ctaLabel": "Join the Waitlist"
+  },
+  "lifestyle": {
+    "eyebrow": "More Than a Cigar",
+    "headingLine1": "A Lifestyle of",
+    "headingHighlight": "Refinement",
+    "features": [
+      {
+        "title": "Global Community",
+        "text": "Connect with cigar enthusiasts worldwide and build lasting friendships."
+      },
+      {
+        "title": "Daily Stories",
+        "text": "Share your experiences, discover insights, and be inspired by our global members."
+      },
+      {
+        "title": "Premium Discovery",
+        "text": "Explore the world's finest cigars, handpicked by experts for true aficionados."
+      },
+      {
+        "title": "Exclusive Access",
+        "text": "Members-only events, limited releases, and private lounge privileges."
+      },
+      {
+        "title": "Privacy First",
+        "text": "Your privacy and personal data are protected with the highest standards."
+      }
+    ]
+  },
+  "membership": {
+    "eyebrow": "Become a Member",
+    "headingLine1": "Unlock a World",
+    "headingLine2": "of Privileges",
+    "description": "Join Daily Stogie and elevate your cigar journey with exclusive benefits, curated experiences, and a global network.",
+    "ctaLabel": "Become a Member",
+    "image": "/uploads/humidor.jpg",
+    "plans": [
+      {
+        "name": "Classic",
+        "price": "$99",
+        "period": "/YEAR",
+        "perks": [
+          "Community Access",
+          "Monthly Newsletter",
+          "Member Discount"
+        ]
+      },
+      {
+        "name": "Premier",
+        "price": "$249",
+        "period": "/YEAR",
+        "perks": [
+          "All Classic Benefits",
+          "Private Events Access",
+          "Early Access to Releases",
+          "Priority Support"
+        ]
+      },
+      {
+        "name": "Elite",
+        "price": "$499",
+        "period": "/YEAR",
+        "perks": [
+          "All Premier Benefits",
+          "Exclusive Lounge Access",
+          "Personal Concierge",
+          "Global Event Invites"
+        ]
+      }
+    ]
+  },
+  "community": {
+    "eyebrow": "The Heart of Daily Stogie",
+    "heading": "A Global Community",
+    "ctaLabel": "Discover Our Community",
+    "photos": [
+      {
+        "src": "/uploads/community-1.jpg",
+        "alt": "Two members sharing cigars and conversation"
+      },
+      {
+        "src": "/uploads/community-2.jpg",
+        "alt": "Close-up of premium cigars with gold bands"
+      },
+      {
+        "src": "/uploads/community-3.jpg",
+        "alt": "Members gathered at a private lounge event"
+      },
+      {
+        "src": "/uploads/community-4.jpg",
+        "alt": "City skyline at night from a members lounge"
+      },
+      {
+        "src": "/uploads/community-5.jpg",
+        "alt": "Hand holding a lit cigar with rising smoke"
+      }
+    ]
+  },
+  "events": {
+    "heading": "Upcoming Events",
+    "ctaLabel": "View All Events",
+    "events": [
+      {
+        "month": "MAY",
+        "day": "24",
+        "title": "Cigar Dinner",
+        "city": "New York",
+        "place": "New York, USA",
+        "image": "/uploads/event-ny.jpg"
+      },
+      {
+        "month": "JUN",
+        "day": "12",
+        "title": "Summer Smoke",
+        "city": "London",
+        "place": "London, UK",
+        "image": "/uploads/event-london.jpg"
+      },
+      {
+        "month": "JUL",
+        "day": "08",
+        "title": "Private Lounge Night",
+        "city": "Dubai",
+        "place": "Dubai, UAE",
+        "image": "/uploads/event-dubai.jpg"
+      },
+      {
+        "month": "AUG",
+        "day": "21",
+        "title": "Aficionado Meetup",
+        "city": "Miami",
+        "place": "Miami, USA",
+        "image": "/uploads/event-miami.jpg"
+      }
+    ]
+  },
+  "journal": {
+    "eyebrow": "From Our Journal",
+    "heading": "Insights & Stories",
+    "ctaLabel": "View All Articles",
+    "articles": [
+      {
+        "category": "Cigar Guide",
+        "title": "How to Build the Perfect Cigar Collection",
+        "date": "May 2, 2026",
+        "read": "5 min read",
+        "image": "/uploads/journal-1.jpg"
+      },
+      {
+        "category": "Lifestyle",
+        "title": "The Art of Pairing Cigars with Fine Whiskey",
+        "date": "April 28, 2026",
+        "read": "6 min read",
+        "image": "/uploads/journal-2.jpg"
+      },
+      {
+        "category": "Behind the Leaf",
+        "title": "Inside the Craft: What Makes a Cigar Truly Exceptional",
+        "date": "April 20, 2026",
+        "read": "7 min read",
+        "image": "/uploads/journal-3.jpg"
+      },
+      {
+        "category": "Travel",
+        "title": "Top Cigar Destinations Around the World",
+        "date": "April 15, 2026",
+        "read": "6 min read",
+        "image": "/uploads/journal-4.jpg"
+      }
+    ]
+  },
+  "newsletter": {
+    "heading": "Stay in the Loop",
+    "description": "Join our newsletter and never miss exclusive releases, events, and stories.",
+    "image": "/uploads/newsletter.jpg"
+  },
+  "comingSoon": {
+    "eyebrow": "Premier International Cigar Community",
+    "headingLine1": "Exquisite",
+    "headingHighlight": "Mobile Experience",
+    "badge": "Coming November 2026",
+    "paragraph1": "Step into the exclusive mobile app community built for true cigar lovers—where every day brings curated picks, insider tips, member-only discussions, and a private circle of enthusiasts who share your passion. No noise, no crowds—just pure stogie culture, delivered straight to your pocket.",
+    "paragraph2": "Mark your calendar and get ready to claim your spot. The best conversations (and the best smokes) are almost here.",
+    "kicker": "Be the First. Get on the Waiting List."
+  },
+  "footer": {
+    "columns": [
+      {
+        "title": "Company",
+        "links": [
+          {
+            "label": "About Us",
+            "href": "#about"
+          },
+          {
+            "label": "Our Mission",
+            "href": "#"
+          },
+          {
+            "label": "Careers",
+            "href": "#"
+          },
+          {
+            "label": "Press",
+            "href": "#"
+          },
+          {
+            "label": "Contact Us",
+            "href": "#contact"
+          }
+        ]
+      },
+      {
+        "title": "Community",
+        "links": [
+          {
+            "label": "All Members",
+            "href": "#community"
+          },
+          {
+            "label": "Stories",
+            "href": "#"
+          },
+          {
+            "label": "Discussions",
+            "href": "#"
+          },
+          {
+            "label": "Events",
+            "href": "#events"
+          },
+          {
+            "label": "Ambassadors",
+            "href": "#"
+          }
+        ]
+      },
+      {
+        "title": "Support",
+        "links": [
+          {
+            "label": "Help Center",
+            "href": "#"
+          },
+          {
+            "label": "FAQ",
+            "href": "#"
+          },
+          {
+            "label": "Terms of Service",
+            "href": "#"
+          },
+          {
+            "label": "Privacy Policy",
+            "href": "#"
+          },
+          {
+            "label": "Community Guidelines",
+            "href": "#"
+          }
+        ]
+      },
+      {
+        "title": "Resources",
+        "links": [
+          {
+            "label": "Cigar Journal",
+            "href": "#journal"
+          },
+          {
+            "label": "Cigar Guide",
+            "href": "#"
+          },
+          {
+            "label": "Pairing Guide",
+            "href": "#"
+          },
+          {
+            "label": "Humidor Guide",
+            "href": "#"
+          },
+          {
+            "label": "Industry News",
+            "href": "#"
+          }
+        ]
+      }
+    ],
+    "panelTitle": "Join the Club",
+    "panelText": "Unlock a world of premium experiences and connections.",
+    "panelCtaLabel": "Join Now",
+    "copyright": "© 2026 Daily Stogie. All rights reserved."
+  }
+}

@@ -1,42 +1,8 @@
 import { ArrowRight, Check, Crown, Diamond, Leaf } from "lucide-react";
-import humidor from "@/assets/humidor.jpg";
+import content from "@/content/site-content.json";
 
-const PLANS = [
-  {
-    icon: Leaf,
-    name: "Classic",
-    price: "$99",
-    period: "/YEAR",
-    featured: false,
-    perks: ["Community Access", "Monthly Newsletter", "Member Discounts"],
-  },
-  {
-    icon: Crown,
-    name: "Premier",
-    price: "$249",
-    period: "/YEAR",
-    featured: true,
-    perks: [
-      "All Classic Benefits",
-      "Private Events Access",
-      "Early Access to Releases",
-      "Priority Support",
-    ],
-  },
-  {
-    icon: Diamond,
-    name: "Elite",
-    price: "$499",
-    period: "/YEAR",
-    featured: false,
-    perks: [
-      "All Premier Benefits",
-      "Exclusive Lounge Access",
-      "Personal Concierge",
-      "Global Event Invites",
-    ],
-  },
-];
+const PLAN_ICONS = [Leaf, Crown, Diamond];
+const FEATURED_PLAN_INDEX = 1;
 
 export function Membership() {
   return (
@@ -47,32 +13,34 @@ export function Membership() {
           <div className="flex flex-col justify-center p-10">
             <div className="flex items-center gap-3">
               <p className="text-xs font-medium uppercase tracking-[0.24em] text-gold">
-                Become a Member
+                {content.membership.eyebrow}
               </p>
               <span className="h-px w-10 bg-gold/50" />
             </div>
             <h2 className="mt-6 font-display text-5xl font-semibold uppercase leading-tight text-ink">
-              Unlock a World
+              {content.membership.headingLine1}
               <br />
-              of Privileges
+              {content.membership.headingLine2}
             </h2>
             <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-              Join Daily Stogie and elevate your cigar journey with exclusive
-              benefits, curated experiences, and a global network.
+              {content.membership.description}
             </p>
             <a
               href="#membership"
               className="mt-8 inline-flex w-fit items-center gap-6 bg-ink px-6 py-4 text-sm font-medium uppercase tracking-[0.2em] text-cream transition-opacity hover:opacity-85"
             >
-              Become a Member <ArrowRight className="h-3.5 w-3.5" />
+              {content.membership.ctaLabel} <ArrowRight className="h-3.5 w-3.5" />
             </a>
           </div>
 
           {/* Plans */}
           <div className="grid grid-cols-1 items-center gap-4 p-6 sm:grid-cols-3">
-            {PLANS.map(({ icon: Icon, name, price, period, perks, featured }) => (
+            {content.membership.plans.map(({ name, price, period, perks }, i) => {
+              const Icon = PLAN_ICONS[i % PLAN_ICONS.length] ?? Leaf;
+              const featured = i === FEATURED_PLAN_INDEX;
+              return (
               <article
-                key={name}
+                key={i}
                 className={
                   featured
                     ? "z-10 bg-ink p-6 text-cream shadow-[0_30px_60px_-30px_rgba(0,0,0,0.6)] sm:-my-6 sm:py-10"
@@ -106,8 +74,8 @@ export function Membership() {
                 </p>
 
                 <ul className="mt-6 space-y-3">
-                  {perks.map((perk) => (
-                    <li key={perk} className="flex items-start gap-2">
+                  {perks.map((perk, pi) => (
+                    <li key={pi} className="flex items-start gap-2">
                       <Check className="mt-0.5 h-3 w-3 shrink-0 text-gold" />
                       <span
                         className={`text-sm tracking-wide ${
@@ -131,12 +99,13 @@ export function Membership() {
                   Select
                 </button>
               </article>
-            ))}
+              );
+            })}
           </div>
 
           {/* Image */}
           <img
-            src={humidor}
+            src={content.membership.image}
             alt="Open humidor filled with premium cigars beside a whiskey glass"
             loading="lazy"
             width={900}

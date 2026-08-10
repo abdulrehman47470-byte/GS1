@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Apple, Play } from "lucide-react";
+import content from "@/content/site-content.json";
 
 export function ComingSoon() {
   const [submitted, setSubmitted] = useState(false);
@@ -10,37 +11,32 @@ export function ComingSoon() {
         {/* Left — story */}
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.28em] text-gold">
-            Premier International Cigar Community
+            {content.comingSoon.eyebrow}
           </p>
 
           <h2 className="mt-5 font-display text-5xl font-semibold uppercase leading-[1.05] tracking-tight text-ink">
-            Exquisite <span className="text-gold">Mobile Experience</span>
+            {content.comingSoon.headingLine1} <span className="text-gold">{content.comingSoon.headingHighlight}</span>
           </h2>
 
           <div className="mt-6 inline-flex items-center gap-3 border border-gold/40 px-5 py-2">
             <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
             <span className="text-xs font-medium uppercase tracking-[0.22em] text-ink">
-              Coming November 2026
+              {content.comingSoon.badge}
             </span>
           </div>
 
           <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground">
-            Step into the exclusive mobile app community built for true cigar
-            lovers—where every day brings curated picks, insider tips,
-            member-only discussions, and a private circle of enthusiasts who
-            share your passion. No noise, no crowds—just pure stogie culture,
-            delivered straight to your pocket.
+            {content.comingSoon.paragraph1}
           </p>
           <p className="mt-4 max-w-lg text-base leading-relaxed text-muted-foreground">
-            Mark your calendar and get ready to claim your spot. The best
-            conversations (and the best smokes) are almost here.
+            {content.comingSoon.paragraph2}
           </p>
         </div>
 
         {/* Right — waitlist form */}
         <div className="flex flex-col items-center text-center">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-gold">
-            Be the First. Get on the Waiting List.
+            {content.comingSoon.kicker}
           </p>
 
           {submitted ? (

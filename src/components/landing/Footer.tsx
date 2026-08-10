@@ -1,48 +1,6 @@
 import { Facebook, Instagram, Youtube } from "lucide-react";
 import { Logo } from "./Logo";
-
-const COLUMNS = [
-  {
-    title: "Company",
-    links: [
-      { label: "About Us", href: "#about" },
-      { label: "Our Mission", href: "#" },
-      { label: "Careers", href: "#" },
-      { label: "Press", href: "#" },
-      { label: "Contact Us", href: "#contact" },
-    ],
-  },
-  {
-    title: "Community",
-    links: [
-      { label: "All Members", href: "#community" },
-      { label: "Stories", href: "#" },
-      { label: "Discussions", href: "#" },
-      { label: "Events", href: "#events" },
-      { label: "Ambassadors", href: "#" },
-    ],
-  },
-  {
-    title: "Support",
-    links: [
-      { label: "Help Center", href: "#" },
-      { label: "FAQ", href: "#" },
-      { label: "Terms of Service", href: "#" },
-      { label: "Privacy Policy", href: "#" },
-      { label: "Community Guidelines", href: "#" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { label: "Cigar Journal", href: "#journal" },
-      { label: "Cigar Guide", href: "#" },
-      { label: "Pairing Guide", href: "#" },
-      { label: "Humidor Guide", href: "#" },
-      { label: "Industry News", href: "#" },
-    ],
-  },
-];
+import content from "@/content/site-content.json";
 
 export function Footer() {
   return (
@@ -70,14 +28,14 @@ export function Footer() {
           </div>
 
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
-            {COLUMNS.map((column) => (
-              <div key={column.title}>
+            {content.footer.columns.map((column, ci) => (
+              <div key={ci}>
                 <h3 className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">
                   {column.title}
                 </h3>
                 <ul className="mt-4 space-y-2">
-                  {column.links.map((link) => (
-                    <li key={link.label}>
+                  {column.links.map((link, li) => (
+                    <li key={li}>
                       <a
                         href={link.href}
                         className="text-sm text-muted-foreground transition-colors hover:text-gold"
@@ -93,22 +51,22 @@ export function Footer() {
 
           <div className="border border-border bg-secondary p-6">
             <p className="font-display text-xl font-semibold uppercase tracking-[0.18em] text-gold">
-              Join the Club
+              {content.footer.panelTitle}
             </p>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Unlock a world of premium experiences and connections.
+              {content.footer.panelText}
             </p>
             <a
               href="#membership"
               className="mt-5 inline-block w-full bg-ink px-6 py-3 text-center text-sm font-medium uppercase tracking-[0.2em] text-cream transition-opacity hover:opacity-85"
             >
-              Join Now
+              {content.footer.panelCtaLabel}
             </a>
           </div>
         </div>
 
         <p className="mt-10 border-t border-border pt-6 text-center text-xs tracking-wide text-muted-foreground">
-          © 2026 Daily Stogie. All rights reserved.
+          {content.footer.copyright}
         </p>
       </div>
     </footer>
