@@ -20,9 +20,11 @@ const frameUrl = (index: number) =>
 export function HeroSequence({
   sectionRef,
   poster,
+  onProgress,
 }: {
   sectionRef: RefObject<HTMLElement | null>;
   poster: string;
+  onProgress?: (progress: number) => void;
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
@@ -166,7 +168,10 @@ export function HeroSequence({
         anticipatePin: 1,
         scrub: 0.65,
         invalidateOnRefresh: true,
-        onUpdate: (self) => renderAt(self.progress),
+        onUpdate: (self) => {
+          renderAt(self.progress);
+          onProgress?.(self.progress);
+        },
       });
       scrollTriggerRef.current = st;
       return () => st.kill();
@@ -177,7 +182,7 @@ export function HeroSequence({
       mm.revert();
       resizeObserver.disconnect();
     };
-  }, [sectionRef]);
+  }, [sectionRef, onProgress]);
 
   return (
     <>

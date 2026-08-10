@@ -4,30 +4,42 @@ import { Logo } from "./Logo";
 const COLUMNS = [
   {
     title: "Company",
-    links: ["About Us", "Our Mission", "Careers", "Press", "Contact Us"],
+    links: [
+      { label: "About Us", href: "#about" },
+      { label: "Our Mission", href: "#" },
+      { label: "Careers", href: "#" },
+      { label: "Press", href: "#" },
+      { label: "Contact Us", href: "#contact" },
+    ],
   },
   {
     title: "Community",
-    links: ["All Members", "Stories", "Discussions", "Events", "Ambassadors"],
+    links: [
+      { label: "All Members", href: "#community" },
+      { label: "Stories", href: "#" },
+      { label: "Discussions", href: "#" },
+      { label: "Events", href: "#events" },
+      { label: "Ambassadors", href: "#" },
+    ],
   },
   {
     title: "Support",
     links: [
-      "Help Center",
-      "FAQ",
-      "Terms of Service",
-      "Privacy Policy",
-      "Community Guidelines",
+      { label: "Help Center", href: "#" },
+      { label: "FAQ", href: "#" },
+      { label: "Terms of Service", href: "#" },
+      { label: "Privacy Policy", href: "#" },
+      { label: "Community Guidelines", href: "#" },
     ],
   },
   {
     title: "Resources",
     links: [
-      "Cigar Journal",
-      "Cigar Guide",
-      "Pairing Guide",
-      "Humidor Guide",
-      "Industry News",
+      { label: "Cigar Journal", href: "#journal" },
+      { label: "Cigar Guide", href: "#" },
+      { label: "Pairing Guide", href: "#" },
+      { label: "Humidor Guide", href: "#" },
+      { label: "Industry News", href: "#" },
     ],
   },
 ];
@@ -65,12 +77,12 @@ export function Footer() {
                 </h3>
                 <ul className="mt-4 space-y-2">
                   {column.links.map((link) => (
-                    <li key={link}>
+                    <li key={link.label}>
                       <a
-                        href="#contact"
+                        href={link.href}
                         className="text-sm text-muted-foreground transition-colors hover:text-gold"
                       >
-                        {link}
+                        {link.label}
                       </a>
                     </li>
                   ))}
