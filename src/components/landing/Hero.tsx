@@ -49,7 +49,7 @@ export function Hero() {
           and fades out near the end so the closing logo-reveal frame is unobstructed */}
       <div
         ref={copyRef}
-        className="relative z-10 flex flex-1 flex-col justify-center bg-ink px-6 py-4 lg:absolute lg:inset-x-0 lg:top-0 lg:bottom-20 lg:flex-none lg:bg-transparent lg:py-0"
+        className="relative z-10 flex flex-1 flex-col justify-center bg-ink px-6 py-4 lg:absolute lg:inset-0 lg:flex-none lg:bg-transparent lg:py-0"
       >
         <div className="mx-auto w-full max-w-[1280px]">
           <div className="max-w-md">

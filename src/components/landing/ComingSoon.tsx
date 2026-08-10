@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Apple, Play } from "lucide-react";
+import { Apple, Facebook, Instagram, Play, Twitter } from "lucide-react";
 import content from "@/content/site-content.json";
 
 export function ComingSoon() {
@@ -31,6 +31,30 @@ export function ComingSoon() {
           <p className="mt-4 max-w-lg text-base leading-relaxed text-muted-foreground">
             {content.comingSoon.paragraph2}
           </p>
+
+          <div className="mt-6 flex items-center gap-4 text-muted-foreground">
+            <a
+              href="#"
+              aria-label="Facebook"
+              className="flex h-10 w-10 items-center justify-center border border-border transition-colors hover:border-gold hover:text-gold"
+            >
+              <Facebook className="h-4 w-4" />
+            </a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              className="flex h-10 w-10 items-center justify-center border border-border transition-colors hover:border-gold hover:text-gold"
+            >
+              <Instagram className="h-4 w-4" />
+            </a>
+            <a
+              href="#"
+              aria-label="Twitter"
+              className="flex h-10 w-10 items-center justify-center border border-border transition-colors hover:border-gold hover:text-gold"
+            >
+              <Twitter className="h-4 w-4" />
+            </a>
+          </div>
         </div>
 
         {/* Right — waitlist form */}

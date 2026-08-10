@@ -1,13 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Header } from "@/components/landing/Header";
 import { Hero } from "@/components/landing/Hero";
 import { ComingSoon } from "@/components/landing/ComingSoon";
-import { Lifestyle } from "@/components/landing/Lifestyle";
-import { Membership } from "@/components/landing/Membership";
-import { Community } from "@/components/landing/Community";
-import { Events } from "@/components/landing/Events";
-import { Journal } from "@/components/landing/Journal";
-import { Newsletter } from "@/components/landing/Newsletter";
 import { Footer } from "@/components/landing/Footer";
 
 const TITLE = "Daily Stogie — Premier International Cigar Community";
@@ -31,16 +24,9 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="min-h-screen bg-background font-sans antialiased">
-      <Header />
       <main>
         <Hero />
         <ComingSoon />
-        <Lifestyle />
-        <Membership />
-        <Community />
-        <Events />
-        <Journal />
-        <Newsletter />
       </main>
       <Footer />
     </div>
